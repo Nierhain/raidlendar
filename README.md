@@ -15,4 +15,3 @@
 - [ ] show event overview
 - [ ] Guildmaster / Officer Dashboard
 - [ ] Attendance Reports
-- [ ] 
