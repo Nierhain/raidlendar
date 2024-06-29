@@ -3,7 +3,7 @@
 ## TODO
 
 - [ ] Deployment (vercel)
-- [ ] Setup auth (clerk)
+- [ ] Setup auth (Authjs, Battle.Net Provider)
 - [ ] Setup DB (vercel postgre)
 - [ ] Setup components (shadcn)
 - [ ] Basic Data models
