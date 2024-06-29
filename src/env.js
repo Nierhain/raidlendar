@@ -7,7 +7,7 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    POSTGRES_URL: z.string().url(),
+    POSTGRES_URL: z.string(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -18,6 +18,8 @@ export const env = createEnv({
     AUTH_BATTLENET_ID: z.string(),
     AUTH_BATTLENET_SECRET: z.string(),
     AUTH_BATTLENET_ISSUER: z.string(),
+    AUTH_DRIZZLE_URL: z.string(),
+
   },
 
   /**
@@ -40,6 +42,7 @@ export const env = createEnv({
     AUTH_BATTLENET_ID: process.env.AUTH_BATTLENET_ID,
     AUTH_BATTLENET_SECRET: process.env.AUTH_BATTLENET_SECRET,
     AUTH_BATTLENET_ISSUER: process.env.AUTH_BATTLENET_ISSUER,
+    AUTH_DRIZZLE_URL: process.env.AUTH_DRIZZLE_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
