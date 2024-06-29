@@ -2,9 +2,9 @@
 
 ## TODO
 
-- [ ] Deployment (vercel)
+- [x] Deployment (vercel)
 - [ ] Setup auth (Authjs, Battle.Net Provider)
-- [ ] Setup DB (vercel postgre)
+- [x] Setup DB (vercel postgres)
 - [ ] Setup components (shadcn)
 - [ ] Basic Data models
 - [ ] Login/Logout
