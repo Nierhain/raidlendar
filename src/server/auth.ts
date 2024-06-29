@@ -1,10 +1,7 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import {
-  getServerSession,
-  type DefaultSession,
-  type NextAuthOptions,
-} from "next-auth";
+import NextAuth from 'next-auth';
 import { type Adapter } from "next-auth/adapters";
+import battlenet from "next-auth/providers/battlenet";
 import DiscordProvider from "next-auth/providers/discord";
 
 import { env } from "~/env";
@@ -60,8 +57,8 @@ export const authOptions: NextAuthOptions = {
   }) as Adapter,
   providers: [
     DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+      clientId: env.BATTLENET_CLIENT_ID,
+      clientSecret: env.BATTLENET_CLIENT_SECRET,
     }),
     /**
      * ...add more providers here.
@@ -81,3 +78,10 @@ export const authOptions: NextAuthOptions = {
  * @see https://next-auth.js.org/configuration/nextjs
  */
 export const getServerAuthSession = () => getServerSession(authOptions);
+
+export const { auth, handlers, signIn, signOut } = NextAuth({
+  providers: [battlenet],
+  adapter: DrizzleAdapter(db, {
+    
+  })
+})
