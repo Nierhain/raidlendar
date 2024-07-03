@@ -8,6 +8,7 @@ export const env = createEnv({
    */
   server: {
     POSTGRES_URL: z.string(),
+    POSTGRES_URL_NO_SSL: z.string(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -17,7 +18,7 @@ export const env = createEnv({
         : z.string().optional(),
     AUTH_BATTLENET_ID: z.string(),
     AUTH_BATTLENET_SECRET: z.string(),
-    AUTH_BATTLENET_ISSUER: z.string(),
+    AUTH_BATTLENET_ISSUER: z.literal("https://eu.battle.net/oauth"),
     AUTH_DRIZZLE_URL: z.string(),
 
   },
@@ -37,6 +38,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     POSTGRES_URL: process.env.POSTGRES_URL,
+    POSTGRES_URL_NO_SSL: process.env.POSTGRES_URL_NO_SSL,
     NODE_ENV: process.env.NODE_ENV,
     AUTH_SECRET: process.env.AUTH_SECRET,
     AUTH_BATTLENET_ID: process.env.AUTH_BATTLENET_ID,
